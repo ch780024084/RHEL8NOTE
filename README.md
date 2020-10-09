@@ -1,2 +1,2 @@
 # RHEL8NOTE
-this is study note
+this is study note ！！！
