@@ -76,12 +76,18 @@ tee：一输入两输出
 :wq!
 ```
 
-|        | cha                                 | word                                                        | line                     |
-| ------ | ----------------------------------- | ----------------------------------------------------------- | ------------------------ |
-| :set   | :set number                         |                                                             |                          |
-| Go     | <kbd>G</kbd>,n<kbd>G</kbd> 跳转行号 | <kbd>g</kbd><kbd>g</kbd>,n<kbd>g</kbd><kbd>g</kbd> 跳转行号 | ：`line-number`          |
-| word   | <kbd>w</kbd> 单词跳转往后           | <kbd>b</kbd>单词跳转往前                                    |                          |
-| delete | <kbd>x</kbd>                        |                                                             | <kbd>d</kbd><kbd>d</kbd> |
+|        | cha                                 | word                                                        | line                                 |
+| ------ | ----------------------------------- | ----------------------------------------------------------- | ------------------------------------ |
+| :set   | :set number                         |                                                             |                                      |
+| Go     | <kbd>G</kbd>,n<kbd>G</kbd> 跳转行号 | <kbd>g</kbd><kbd>g</kbd>,n<kbd>g</kbd><kbd>g</kbd> 跳转行号 | ：`line-number`                      |
+| word   | <kbd>w</kbd> 单词跳转往后           | <kbd>b</kbd>单词跳转往前                                    |                                      |
+| delete | <kbd>x</kbd>                        |                                                             | <kbd>d</kbd><kbd>d</kbd>             |
+| 选中   | <kbd>v</kbd>                        | <kbd>Shift</kbd>+<kbd>v</kbd>                               |                                      |
+| 复制   | <kbd>y</kbd>                        |                                                             | <kbd>n</kbd><kbd>y</kbd><kbd>y</kbd> |
+| 粘贴   | <kbd>p</kbd>                        |                                                             |                                      |
+| 撤销   | <kbd>u</kbd>                        |                                                             |                                      |
+
+## 变量
 
 
 
