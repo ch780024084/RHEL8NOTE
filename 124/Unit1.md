@@ -36,6 +36,14 @@
 
 ![image-20201010140316782](../img/image-20201010140316782.png)
 
+```
+虚拟机管理软件 vrt-manager
+```
+
+<img src="../img/image-20201012093025767.png" alt="image-20201012093025767" style="zoom:50%;" />
+
+
+
 # 终端切换
 
 |      |               |              |
@@ -51,4 +59,62 @@ hostname :查看当前主机名
 pwd :查看当前路径
 <Ctrl+d>:注销
 ```
+
+# 关机重启
+
+|      |        关机        |       重启       |
+| ---- | :----------------: | :--------------: |
+|      |       init 0       |      init 6      |
+|      |      poweroff      |      reboot      |
+|      | systemctl poweroff | systemctl reboot |
+|      |   shutdown -h 0    |  shutdown -r 0   |
+
+# 回显式命令
+
+```
+date
+date +%R
+date +%y%m%d
+```
+
+# 交互式命令
+
+```
+passwd
+```
+
+# 查看文件内容
+
+|        |                            |                                           |
+| ------ | -------------------------- | ----------------------------------------- |
+| cat    | cat  -n  /var/log/messages |                                           |
+| more   | more  /var/log/messages    | <space>,<q>                               |
+| less   | less  /var/log/messages    | <space>,<q>,<Arrow up>,<Arrow Down>,/word |
+| head   | head  /var/log/messages    | 显示文件头10行信息 -n 2                   |
+| tail   | tail   /var/log/messages   | 显示文件尾10行信息 -n 3                   |
+| vim/vi | vim /var/log/messages      | ：q                                       |
+
+# TAB
+
+功能：一下补全，两下列出
+
+对象：命令、路径、选项
+
+# history
+
+```
+history
+ls -a ~/.bash_history
+history -a 
+!num
+!cha
+```
+
+|      | file  | folder   |
+| ---- | ----- | -------- |
+| 创建 | touch | mkdir -p |
+| 改名 | mv    | mv       |
+| 移动 | mv    | mv       |
+| 拷贝 | cp    | cp -r    |
+| 删除 | rm    | rm -r    |
 
