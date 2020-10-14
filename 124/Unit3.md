@@ -36,7 +36,17 @@ chown kiosk  a.txt
 chown :bin  a.txt
 chown -R kiosk:bin  a.txt
 
-#suid=4=s普通用户拥有该命令所属用户的身份执行
+#suid=4=s普通用户拥有该命令所属用户的身份执行，只对命令或者可执行文件有效，对普通文件或者目录无效
+#用户或属主对应的前三位权限的x位上如果有s就表示suid权限。当x位上没有小写x执行权限的时候，suid的权限显示的就是大S。
+[root@foundation0 ~]# chmod u+s /bin/vim
+[root@foundation0 ~]# ls -l /bin/vim
+-rwsr-xr-x. 1 root root 3096552 Dec  6  2018 /bin/vim
+[kiosk@foundation0 ~]$ vim /tmp/z.txt 
+[kiosk@foundation0 ~]$ cat /tmp/z.txt 
+dadasdas:
+idasdasd
+
+
 #sgid=2=s
 #stick=1=t
 ```
