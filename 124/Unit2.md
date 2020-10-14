@@ -91,9 +91,65 @@ tee：一输入两输出
 
 ## 用户和组
 
-![image-20201012201841446](../img/image-20201012201841446.png)
+```bash
+#id
+[kiosk@foundation0 ~]$ id kiosk
+uid=1000(kiosk) gid=1000(kiosk) groups=1000(kiosk),980(libvirt)
 
-![image-20201012201856001](../img/image-20201012201856001.png)
+#su
+[root@foundation0 ~]# su - kiosk
+
+#sudo
+
+#useradd
+useradd tom
+
+passwd
+
+#usermod
+usermod -aG wheel kiosk #G：添加附加组 a：追加附加组
+usermod -u 1111 tom #修改用户id
+usermod -g 1111 tom #修改用户组id
+usermod -d /home/mao tom #修改用户家目录
+usermod -s /bin/sh tom #修改用户登录shell
+usermod -l mao tom #修改用户名
+usermod -L mao #锁定用户
+usermod -U mao #解锁用户
+#userdel
+userdel -r jerry #删除用户及家目录
+
+#groupadd
+groupadd cat
+
+#groupmod
+groupmod -g 1111 cat #修改组id
+gruopmod -n mao cat #修改组名
+
+#groupdel
+groupdel tom #删除组
+
+#chage -l kiosk 查看密码策略详细信息
+[root@foundation0 ~]# chage -l kiosk 
+Last password change					: never
+Password expires					: never
+Password inactive					: never
+Account expires						: never
+Minimum number of days between password change		: 0
+Maximum number of days between password change		: 99999
+Number of days of warning before password expires	: 7
+
+#chage -d 0 kiosk #登录修改密码
+#chage -m 9 -M 30 -W 14 kiosk # m：最短有效期 M：最长有效期 W：提前警告
+
+```
+
+|      | FILE        |
+| ---- | ----------- |
+|      | /etc/passwd |
+|      | /etc/shadow |
+|      | /etc/group  |
+
+
 
 ## &&,||
 
