@@ -147,3 +147,124 @@ TIME：启动了多少时间
 按k结束进程
 
 ![image-20201017163945190](../img/image-20201017163945190.png)
+
+jobs
+
+```bash
+#jobs
+dd if=/dev/zero of=/dev/null bs=1k
+<Ctrl-Z>
+#jobs
+#bg [1]将一个在后台暂停的命令，变成继续执行
+dd if=/dev/zero of=/dev/null bs=1k &
+#jobs
+fg [1] 把相应的进程拉回前台
+<ctrl-C>
+kill %1 
+```
+
+pgrep
+
+```bash
+pgrep #过滤相应进程
+[kiosk@foundation0 ~]$ pgrep  bash 
+38197
+```
+
+查看CPU负载
+
+```bash
+#top
+#uptime
+#w
+```
+
+# 控制服务和守护进程
+
+## 启动服务
+
+```
+[kiosk@foundation0 ~]$ systemctl start sshd
+```
+
+## 查看服务状态
+
+```
+[kiosk@foundation0 ~]$ systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: ena>
+   Active: active (running) since Tue 2020-10-13 03:56:16 CST; 6 days ago
+[kiosk@foundation0 ~]$ systemctl status sshd -l  #l：详细查看服务状态
+```
+
+## 停止服务
+
+```
+[kiosk@foundation0 ~]$ systemctl stop sshd
+```
+
+## 重启服务
+
+```
+[kiosk@foundation0 ~]$ systemctl restart sshd
+```
+
+## 开机不启动
+
+```
+[kiosk@foundation0 ~]$ systemctl disabled sshd
+```
+
+## 查看开机是否启动
+
+```
+[kiosk@foundation0 ~]$ systemctl is-enabled sshd
+```
+
+## 查看服务是否活动
+
+```
+[kiosk@foundation0 ~]$ systemctl is-active sshd
+```
+
+## 重新加载配置服务
+
+```
+[kiosk@foundation0 ~]$ systemctl reload sshd #不会重启进程，仅仅加载配置文件
+```
+
+## 屏蔽服务/取消屏蔽服务
+
+```
+[kiosk@foundation0 ~]$ systemctl mask sshd
+[kiosk@foundation0 ~]$ systemctl unmask sshd
+```
+
+## 一个服务的启动依赖单元配置文件
+
+## 单元配置文件
+
+[kiosk@foundation0 ~]$ cat /usr/lib/systemd/system/httpd.service
+
+## 为什么叫单元配置文件
+
+systemctl工具 根据你服务类型的不同划分了不同类型的单元
+
+service
+
+​	和服务有关的单元
+
+target
+
+​	和启动有关的单元
+
+socket
+
+​	套接字服务 （telnet）
+
+device
+
+slice
+
+
+
