@@ -381,3 +381,9 @@ ipv4.gateway             ipv6.dns                 ipv6.token
 	！！！修改配置文件时，只能重启系统使文件生效
 ```
 
+## 编辑网络配置文件
+
+```
+nmcli connection show
+```
+
